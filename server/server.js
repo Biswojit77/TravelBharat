@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.send("TravelBharat API is running and connected to DB!");
 });
 
+// Link the routes
+const stateRouter = require('./routes/states');
+app.use('/states', stateRouter);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port: ${PORT}`);
